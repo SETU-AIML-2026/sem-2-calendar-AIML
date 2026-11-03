@@ -1,4 +1,4 @@
-# Semester 1 schedule 2027
+# Semester 2 schedule 2027
 
 **11 Jan - 7 May 2027** · 12 teaching weeks · All times use Europe/Dublin.
 

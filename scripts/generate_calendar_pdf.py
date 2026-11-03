@@ -12,9 +12,9 @@ weeks=[]
 for d,n,t in re.findall(r'  - date: (\d{4}-\d{2}-\d{2})\s+week: (\d+|~)\s+topic: ([^\n]+)',raw):
     weeks.append((date.fromisoformat(d),int(n) if n!='~' else None,t))
 assert len(weeks)==17
-out=ROOT/'unit-1-sem-1/paneltalk-1-calendar/calendar.pdf'
+out=ROOT/'unit-1-sem-2/paneltalk-1-calendar/calendar.pdf'
 c=canvas.Canvas(str(out),pagesize=landscape(A4))
-c.setTitle('Semester 1 Calendar 2027');c.setAuthor('Department of Computing & Mathematics, SETU')
+c.setTitle('Semester 2 Calendar 2027');c.setAuthor('Department of Computing & Mathematics, SETU')
 W,H=landscape(A4)
 left=30;top=H-75
 widths=[55,68]+[43]*7+[153]
@@ -22,11 +22,11 @@ xs=[left]
 for width in widths:xs.append(xs[-1]+width)
 rowh=22
 c.setFillColor(HexColor('#626262'));c.setFont('Helvetica-Bold',19)
-c.drawString(left,H-34,'Semester 1 | 2027')
+c.drawString(left,H-34,'Semester 2 | 2027')
 c.setFont('Helvetica',10);c.drawRightString(W-30,H-33,'Monday - Sunday')
 c.setFillColor(HexColor('#F2F2F2'));c.rect(left,top,xs[-1]-left,25,fill=1,stroke=0)
 c.setFillColor(HexColor('#626262'));c.setFont('Helvetica-Bold',10)
-c.drawString(left+5,top+9,'Semester 1')
+c.drawString(left+5,top+9,'Semester 2')
 for j,lab in enumerate(['Mon','Tue','Wed','Thu','Fri','Sat','Sun']):c.drawCentredString((xs[j+2]+xs[j+3])/2,top+9,lab)
 c.drawCentredString((xs[9]+xs[10])/2,top+9,'Modules / events')
 c.setStrokeColor(HexColor('#555555'));c.setLineWidth(.5);c.line(left,top,xs[-1],top)

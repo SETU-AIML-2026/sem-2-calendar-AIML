@@ -13,7 +13,7 @@ s.getRange('C1:I24').format.columnWidth=9;
 s.getRange('J1:J24').format.columnWidth=42;
 s.mergeCells('A1:B1');s.mergeCells('A2:B2');
 s.getRange('A1').values=[[2027]];s.getRange('A1').format.font={size:16,bold:true,color:'#626262'};
-s.getRange('A2:J2').values=[['Semester 1',null,'M','T','W','T','F','S','S','Modules']];
+s.getRange('A2:J2').values=[['Semester 2',null,'M','T','W','T','F','S','S','Modules']];
 s.getRange('A2:J2').format={fill:'#F2F2F2',rowHeight:26,borders:{bottom:{style:'thin',color:'#444444'}}};
 s.getRange('A2:B2').format.font={bold:true,color:'#626262'};
 s.getRange('C2:J2').format.horizontalAlignment='center';
@@ -71,7 +71,7 @@ s.freezePanes.freezeRows(3);
 wb.recalculate();
 console.log((await wb.inspect({kind:'table',range:'calendar-2027!A4:J20',tableMaxRows:17,tableMaxCols:10,maxChars:2000})).ndjson);
 console.log((await wb.inspect({kind:'match',searchTerm:'#REF!|#VALUE!|#NAME\\?',options:{useRegex:true,maxResults:10}})).ndjson);
-await(await SpreadsheetFile.exportXlsx(wb)).save(dir+'../unit-1-sem-1/Semester_1_2027_AIML.xlsx');
+await(await SpreadsheetFile.exportXlsx(wb)).save(dir+'../unit-1-sem-2/Semester_2_2027_AIML.xlsx');
 const img=await wb.render({sheetName:'calendar-2027',range:'A1:N26',scale:1.5,format:'png'});
 await fs.writeFile(dir+'styled-calendar.png',new Uint8Array(await img.arrayBuffer()));
 

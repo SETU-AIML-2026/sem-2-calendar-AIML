@@ -10,7 +10,7 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-UNIT = ROOT / 'unit-1-sem-1'
+UNIT = ROOT / 'unit-1-sem-2'
 raw = (ROOT / 'calendar.yaml').read_text(encoding='utf-8')
 year = int(re.search(r'^year: (\d{4})$', raw, re.M)[1])
 blocks = re.split(r'^  - date: ', raw, flags=re.M)[1:]
@@ -35,7 +35,7 @@ def fmt(d):
 
 first, last = weeks[0][0], weeks[-1][0] + timedelta(days=4)
 span = f'{fmt(first)} - {fmt(last)} {year}'
-schedule = [f'# Semester 1 schedule {year}', '',
+schedule = [f'# Semester 2 schedule {year}', '',
     f'**{span}** · 12 teaching weeks · All times use Europe/Dublin.', '',
     '**January On-Site: Friday 15 January 2027.**', '',
     'Teaching starts on Monday 18 January. Teaching week 12 ends on Friday 7 May.', '',
